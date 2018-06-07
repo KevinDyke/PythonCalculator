@@ -26,7 +26,7 @@ Feature: Reverse Polish notation calculator
     
   Scenario: binary multiplication
     Given a multiplication
-    When I enter 3
-    And I also enter 2
+    When I enter the multiplicand as 3
+    And I enter the multiplier as 2
     Then the product is 6.0
  

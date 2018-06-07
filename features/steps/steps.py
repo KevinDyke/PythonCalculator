@@ -41,11 +41,11 @@ def step_impl(context,result):
 def step_impl(context):
     context.rpncalculator = rpncalculator()
 
-@when('I enter {value}')
+@when('I enter the multiplicand as {value}')
 def step_impl(context,value):
     context.rpncalculator.enterValue(value)
     
-@when('I also enter {value}')
+@when('I enter the multiplier as {value}')
 def step_impl(context,value):
     context.rpncalculator.enterValue(value)
     
