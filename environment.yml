@@ -1,0 +1,20 @@
+name: calculator
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - certifi=2018.4.16=py36_0
+  - pip=9.0.3=py36_0
+  - python=3.6.5=1
+  - setuptools=39.2.0=py36_0
+  - vs2015_runtime=14.0.25420=0
+  - wheel=0.31.0=py36_0
+  - wincertstore=0.2=py36_0
+  - pip:
+    - behave==1.2.6
+    - parse==1.8.4
+    - parse-type==0.4.2
+    - pyhamcrest==1.9.0
+    - six==1.11.0
+prefix: C:\Users\Kevin\Anaconda3\envs\calculator
+
