@@ -4,7 +4,7 @@ class rpncalculator():
         self.result = 0
         
     def enterValue(self,value):
-        self.stack.append(value)
+        self.stack.append(float(value))
         
     def sum(self):
         self.number2 = self.stack.pop()
@@ -25,4 +25,4 @@ class rpncalculator():
         self.stack.append(self.result)
  
     def getResult(self):
-        return self.stack[0]
+        return str(self.stack[0])

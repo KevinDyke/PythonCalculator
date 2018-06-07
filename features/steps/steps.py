@@ -17,21 +17,21 @@ def step_impl(context):
 @then('the result is {sum}')
 def step_impl(context,sum):
     context.sumresult = context.rpncalculator.getResult()
-    assert (context.sumresult == float(sum))
-    
+    assert (context.sumresult == str(sum))
+ 
 @given('a subtraction')
 def step_impl(context):
     context.rpncalculator = rpncalculator()
-
-@when('I enter {value:d}')
+    
+@when('I enter the minuend as {value}')
 def step_impl(context,value):
     context.rpncalculator.enterValue(value)
 
-@when('I also enter {value:d}')
+@when('I enter the subtrahend as {value}')
 def step_impl(context,value):
     context.rpncalculator.enterValue(value) 
 
-@then('the difference is {result:d}')
+@then('the difference is {result}')
 def step_impl(context,result):
     context.rpncalculator.difference()
     context.differenceResult = context.rpncalculator.getResult()
@@ -41,18 +41,16 @@ def step_impl(context,result):
 def step_impl(context):
     context.rpncalculator = rpncalculator()
 
-@when('I enter {value:d}')
+@when('I enter {value}')
 def step_impl(context,value):
     context.rpncalculator.enterValue(value)
     
-@when('I also enter {value:d}')
+@when('I also enter {value}')
 def step_impl(context,value):
     context.rpncalculator.enterValue(value)
     
-@then('the product is {result:d}')
+@then('the product is {result}')
 def step_impl(context,result):
     context.rpncalculator.multiply()
     context.productResult = context.rpncalculator.getResult()
-    assert (context.productResult == result)
-
- 
+    assert (context.productResult == result) 
