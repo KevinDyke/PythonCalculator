@@ -30,3 +30,16 @@ Feature: Reverse Polish notation calculator
     And I enter the multiplier as 2
     Then the product is 6.0
  
+  Scenario Outline: binary division
+    Given a pair of <pair_of_numbers>
+    When the calculator divides the numbers
+    Then the quotient is <quotient>
+ 
+    Examples: dividend_and_divisor
+    | pair_of_numbers | quotient           |
+    | 1,1             | 1.0                |
+    | 0,1             | 0.0                |
+    | 5,2             | 2.5                |
+    | 2,1             | 2.0                |
+    | 100,300         | 0.3333333333333333 |
+    | 1,0             | Division By Zero   |  

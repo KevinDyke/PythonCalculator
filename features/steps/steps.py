@@ -54,3 +54,22 @@ def step_impl(context,result):
     context.rpncalculator.multiply()
     context.productResult = context.rpncalculator.getResult()
     assert (context.productResult == result) 
+    
+@given('a pair of {pair_of_numbers}')
+def step_impl(context,pair_of_numbers):
+    context.rpncalculator = rpncalculator()
+    context.rpncalculator.numbers = pair_of_numbers.split(',')
+    context.rpncalculator.number1 = float(context.rpncalculator.numbers[0])
+    context.rpncalculator.number2 = float(context.rpncalculator.numbers[1])
+    context.rpncalculator.enterValue(context.rpncalculator.number1)
+    context.rpncalculator.enterValue(context.rpncalculator.number2)
+    
+@when('the calculator divides the numbers')
+def step_impl(context):
+    context.rpncalculator.divide()
+    
+@then('the quotient is {quotient}')
+def step_impl(context,quotient):
+    context.sumresult = context.rpncalculator.getResult()
+    assert (context.sumresult == str(quotient))
+    
